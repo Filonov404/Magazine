@@ -1,10 +1,27 @@
 $(function () {
+  $('.menu__btn').on('click', function () {
+      $('.menu__list').toggleClass('menu__list--active');
+  });
+
+  $('.footer-top__title').on('click', function () {
+      $(this).next().slideToggle();
+      $(this).toggleClass('active');
+  });
+
   $(".top-slider__inner").slick({
     dots: true,
     arrows: false,
     fade: true,
     autoplay: true,
     autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          dots: false
+        }
+      }
+    ]
   });
 
   $(".product-slide__thumb").slick({
